@@ -1,0 +1,57 @@
+--- Task 3: Nearest Neighbors (CBOW vs SG) ---
+Target word: research
+CBOW: [('sharma', 0.6068381071090698), ('srg', 0.5684949159622192), ('dae', 0.5635280013084412), ('crg', 0.5366849303245544), ('vijay', 0.5333236455917358)]
+Skip-gram: [('project', 0.8955298662185669), ('sponsored', 0.8920894265174866), ('cair', 0.7813679575920105), ('crg', 0.7715550661087036), ('jckic', 0.7623180747032166)]
+
+Target word: student
+CBOW: [('candidate', 0.7784842252731323), ('programme', 0.7141972780227661), ('requirement', 0.6868000626564026), ('register', 0.6822874546051025), ('grade', 0.6570720076560974)]
+Skip-gram: [('candidate', 0.8040409684181213), ('until', 0.7923727035522461), ('qualifier', 0.7891831994056702), ('recommendations', 0.7859074473381042), ('her', 0.7827568054199219)]
+
+Target word: phd
+CBOW: [('provisionally', 0.6896076202392578), ('mtech', 0.6727179884910583), ('projectphd', 0.6468802094459534), ('shortlisted', 0.6214056015014648), ('enrolled', 0.6133807897567749)]
+Skip-gram: [('applicationsdst', 0.8092073202133179), ('projectphd', 0.7830962538719177), ('fellowship', 0.7773247957229614), ('prakhar', 0.7723518013954163), ('schememeity', 0.7704094052314758)]
+
+Target word: exam
+CBOW: [('topicwise', 0.7651609778404236), ('preliminary', 0.6939719319343567), ('solved', 0.6774120926856995), ('papers', 0.6142922639846802), ('withdraw', 0.6044906973838806)]
+Skip-gram: [('preliminary', 0.8873581290245056), ('topicwise', 0.8527677059173584), ('solved', 0.8129537105560303), ('papers', 0.7222511768341064), ('announcement', 0.7123546600341797)]
+
+
+--- Analogies ---
+ug : btech :: pg : ? 
+  -> CBOW: fintech         (cosine score: 0.6440)
+  -> SG:   technology      (cosine score: 0.7210)
+phd : research :: exam : ? 
+  -> CBOW: engineering     (cosine score: 0.6655)
+  -> SG:   mohanta         (cosine score: 0.7588)
+student : exam :: faculty : ? 
+  -> CBOW: biotechnology   (cosine score: 0.5433)
+  -> SG:   topicwise       (cosine score: 0.6778)
+cse : programming :: mechanical : ? 
+  -> CBOW: projects        (cosine score: 0.5524)
+  -> SG:   moving          (cosine score: 0.7441)
+student : hostel :: faculty : ? 
+  -> CBOW: agencies        (cosine score: 0.7264)
+  -> SG:   scientists      (cosine score: 0.6787)
+
+--- All Task 2 Models Analogy Confidence/Accuracy Metrics ---
+Model Name                | Type  | Acc (Top-5 vs GT)  | Avg Top-1 Cosine Sim
+---------------------------------------------------------------------------
+dim50_win3_neg3           | CBOW  |   0.00% (5 valid)    | 0.6175
+dim100_win5_neg5          | CBOW  |   0.00% (5 valid)    | 0.5353
+dim150_win5_neg10         | CBOW  |  40.00% (5 valid)    | 0.5066
+dim200_win7_neg5          | CBOW  |   0.00% (5 valid)    | 0.5313
+dim10_win3_neg3           | CBOW  |   0.00% (5 valid)    | 0.8979
+dim20_win5_neg5           | CBOW  |  20.00% (5 valid)    | 0.7100
+dim30_win7_neg10          | CBOW  |  20.00% (5 valid)    | 0.6263
+dim40_win9_neg5           | CBOW  |   0.00% (5 valid)    | 0.5952
+dim50_win3_neg3           | SG    |   0.00% (5 valid)    | 0.6022
+dim100_win5_neg5          | SG    |   0.00% (5 valid)    | 0.5096
+dim150_win5_neg10         | SG    |   0.00% (5 valid)    | 0.4988
+dim200_win7_neg5          | SG    |   0.00% (5 valid)    | 0.4762
+dim10_win3_neg3           | SG    |   0.00% (5 valid)    | 0.9197
+dim20_win5_neg5           | SG    |   0.00% (5 valid)    | 0.8010
+dim30_win7_neg10          | SG    |   0.00% (5 valid)    | 0.7161
+dim40_win9_neg5           | SG    |  20.00% (5 valid)    | 0.6346
+
+--- Model Performance Comparison ---
+Overall, Skip-gram performs better than CBOW in generating confident analogy predictions (Avg Top-1 Sim: SG 0.6448 > CBOW 0.6275).

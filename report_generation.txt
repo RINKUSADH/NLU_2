@@ -1,0 +1,45 @@
+Model: VanillaRNN
+  Novelty Rate: 91.94%
+  Diversity: 91.00%
+  Sample Names:
+    - Lakshay ahuja
+    - Xit patil
+    - Daksh rastogi
+    - Kritika goel
+    - Hari bansal
+    - Aarnav rajput
+    - Yuvya dubey
+    - Vedant rastogi
+    - Krish soni
+    - Hari shatia
+
+Model: BLSTM
+  Novelty Rate: 100.00%
+  Diversity: 97.15%
+  Sample Names:
+    - Anniy
+    - Chuy
+    - Nav dkwul
+    - Mya dxtu
+    - Chanva
+    - Shhin golo
+    - Akn mpara
+    - Ogi
+    - Ojaj mopa
+    - Ava
+
+Model: RNNAttention
+  Novelty Rate: 94.63%
+  Diversity: 99.33%
+  Sample Names:
+    - Warta khanna
+    - Anan varma
+    - Ishant iyer
+    - Mahana tandg
+    - Deepat iyer
+    - Zara kahuja
+    - Krish chopra
+    - Wahika ahuja
+    - Aaran dixit
+    - Karya iyer
+
